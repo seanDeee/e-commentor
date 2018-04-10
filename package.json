@@ -2,13 +2,15 @@
     "name": "seandeee.htmltemplates",
     "title": "HTML Template",
     "description": "This extension insert HTML Template to your file, Saves Time! Located at File Menu or by just pressing Control + 1",
-    "homepage": "https://github.com/seanDeee/html-template-brackets-ext",
+    "homepage": "https://github.com/seanDeee/brackets-custom-extension",
     "version": "1.0.0",
     "author": "Sean Dee (https://github.com/seanDeee)",
     "keywords": [
-		"html",
-		"template",
-		"html template"
+		"custom",
+		"menu",
+		"html template",
+		"custom menu",
+		"snippet"
 	],
     "engines": {
         "brackets": ">=0.24.0"
