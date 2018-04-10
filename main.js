@@ -43,6 +43,16 @@
             }
         }
 
+        var COMMANDO_ID = "htmltemplates.seanDeee"; // package-style naming to avoid collisions
+        CommandManager.register("HTML Template", COMMANDO_ID, htmlFunction);
+
+        //var menu = Menus.getMenu(Menus.AppMenuBar.CUSTOM_MENU);
+        menu.addMenuItem(COMMANDO_ID, [{
+            "key": "ctrl-1"
+        }, {
+            "key": "ctrl-1"
+        }]);
+
 
         // Menus -> quickLib : display the "About Extension" modal
         function aboutModal() {
@@ -56,9 +66,6 @@
             Dialogs.showModalDialog('a', "About Extension", displayAbout);
         }
 
-        var COMMANDO_ID = "htmltemplates.seanDeee"; // package-style naming to avoid collisions
-        CommandManager.register("HTML Template", COMMANDO_ID, htmlFunction);
-
         // About Extension menu item
         var nav_ABOUT = "about.custom";
         CommandManager.register("About Extension", nav_ABOUT, aboutModal);
@@ -66,13 +73,6 @@
         // extension main menu
         Menus.addMenu('Custom Menu', 'custom.main');
         var menu = Menus.getMenu('custom.main');
-
-        //var menu = Menus.getMenu(Menus.AppMenuBar.CUSTOM_MENU);
-        menu.addMenuItem(COMMANDO_ID, [{
-            "key": "ctrl-1"
-        }, {
-            "key": "ctrl-1"
-        }]);
 
         menu.addMenuItem(nav_ABOUT);
     });
