@@ -96,11 +96,10 @@
         // extension main menu
         Menus.addMenu('Custom Menu', 'custom.main');
         var menu = Menus.getMenu('custom.main');
-        var menu2 = Menus.getMenu('custom.main');
 
         //Command key for the htmlFunction()
         //var menu = Menus.getMenu(Menus.AppMenuBar.CUSTOM_MENU);
-        menu2.addMenuItem(COMMANDO_ID, [{
+        menu.addMenuItem(COMMANDO_ID, [{
             "key": "ctrl-1"
         }, {
             "key": "ctrl-1"
@@ -108,12 +107,12 @@
 
 
         menu.addMenuItem(COMMANDO_CANONICAL_ID, [{
-            "key": "ctrl-2"
+            "key": "ctrl-4"
         }, {
-            "key": "ctrl-2"
+            "key": "ctrl-4"
         }]);
 
 
-        menu2.addMenuItem(nav_ABOUT);
+        menu.addMenuItem(nav_ABOUT);
         menu.addMenuItem(nav_CANONICAL);
     });
