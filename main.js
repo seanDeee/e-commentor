@@ -99,10 +99,10 @@
 
         //Command key for the htmlFunction()
         //var menu = Menus.getMenu(Menus.AppMenuBar.CUSTOM_MENU);
-        menu.addMenuItem(COMMANDO_ID, COMMANDO_CANONICAL_ID ,[{
+        menu.addMenuItem(COMMANDO_ID,[{
             "key": "ctrl-1"
         }, {
-            "key": "ctrl-4"
+            "key": "ctrl-1"
         }]);
 
 
