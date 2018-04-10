@@ -46,10 +46,10 @@ define(function (require, exports, module) {
     CommandManager.register("HTML Template", COMMANDO_ID, htmlFunction);
 
 // extension main menu
-    Menus.addMenu('test', 'test.main');
-    var menu = Menus.getMenu('test.main');
+    Menus.addMenu('Custom', 'Custom.main');
+    var menu = Menus.getMenu('Custom.main');
     
-    var menu = Menus.getMenu(Menus.AppMenuBar.FILE_MENU);
+    var menu = Menus.getMenu(Menus.AppMenuBar.CUSTOM_MENU);
     menu.addMenuItem(COMMANDO_ID, [{ "key": "ctrl-1" }, { "key": "ctrl-1"}]);
     
     
