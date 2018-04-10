@@ -5,6 +5,9 @@ define(function (require, exports, module) {
         EditorManager  = brackets.getModule("editor/EditorManager"),
         Menus          = brackets.getModule("command/Menus");
 
+    // get extension path, create dataObjectbject with all data from our JSON file
+    var sourcesObject = JSON.parse(JSONfile);
+    var libraryNames = Object.getOwnPropertyNames(sourcesObject);
     
     // Function to run when the menu item is clicked
         
@@ -41,10 +44,15 @@ define(function (require, exports, module) {
         }
     }
     
+
+    
     var COMMANDO_ID = "htmltemplates.seanDeee";   // package-style naming to avoid collisions
     CommandManager.register("HTML Template", COMMANDO_ID, htmlFunction);
 
-
+// extension main menu
+    Menus.addMenu('test', 'quicklib.main');
+    var menu = Menus.getMenu('quicklib.main');
+    
     var menu = Menus.getMenu(Menus.AppMenuBar.FILE_MENU);
     menu.addMenuItem(COMMANDO_ID, [{ "key": "ctrl-1" }, { "key": "ctrl-1"}]);
     
