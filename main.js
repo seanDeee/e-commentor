@@ -48,6 +48,31 @@
         CommandManager.register("HTML Template", COMMANDO_ID, htmlFunction);
 
         
+        function canonical() {
+            var editor = EditorManager.getFocusedEditor();
+            if (editor) {
+
+
+                var tmpt =
+                    "<html>" + "\n" +
+                    "\n" +
+                    "<head>" + "\n" +
+                    "\t" + "<meta name=\"robots\" content=\"noindex\">" + "\n" +
+                    "\t" + "<meta http-equiv=\"refresh\" content=\"0; url=TARGET LINK HERE\">" + "\n" +
+
+                    "</head>" + "\n\n" +
+                   
+                    "</html>" + "\n";
+
+                var insertionPos = editor.getCursorPos();
+                editor.document.replaceRange(tmpt, insertionPos);
+            }
+        }
+        
+         // HTML Command Menu (Function htmlFunction())
+        var COMMANDO_CANONICAL_ID = "htmltemplates.seanDeee"; // package-style naming to avoid collisions
+        CommandManager.register("Canonical Redirect", COMMANDO_CANONICAL_ID, htmlFunction);
+        
         // Menus -> quickLib : display the "About Extension" modal
         function aboutModal() {
             var displayAbout = "<img style=\"float: left; margin:11px 5px 0px 0px; padding:0;\" src=\"styles/images/brackets_icon.svg\" alt=\"logo\" width=\"30\" height=\"30\">";
@@ -74,6 +99,12 @@
             "key": "ctrl-1"
         }, {
             "key": "ctrl-1"
+        }]);
+        
+         menu.addMenuItem(COMMANDO_CANONICAL_ID, [{
+            "key": "ctrl-2"
+        }, {
+            "key": "ctrl-2"
         }]);
 
         
