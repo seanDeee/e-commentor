@@ -59,13 +59,13 @@ define(function (require, exports, module) {
     var COMMANDO_ID = "htmltemplates.seanDeee"; // package-style naming to avoid collisions
     CommandManager.register("HTML Template", COMMANDO_ID, htmlFunction);
 
-     // About Extension menu item
-    var nav_ABOUT = "about.custom";
-    CommandManager.register("About Extension", nav_ABOUT, aboutModal);
-    
     // extension main menu
     Menus.addMenu('Custom', 'custom.main');
     var menu = Menus.getMenu('custom.main');
+    
+     // About Extension menu item
+    var nav_ABOUT = "about.custom";
+    CommandManager.register("About Extension", nav_ABOUT, aboutModal);
     
     //var menu = Menus.getMenu(Menus.AppMenuBar.CUSTOM_MENU);
     menu.addMenuItem(COMMANDO_ID, [{
