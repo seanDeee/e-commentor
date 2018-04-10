@@ -3,7 +3,8 @@ define(function (require, exports, module) {
 
     var CommandManager = brackets.getModule("command/CommandManager"),
         EditorManager  = brackets.getModule("editor/EditorManager"),
-        Menus          = brackets.getModule("command/Menus");
+        Menus          = brackets.getModule("command/Menus"),
+        Dialogs = brackets.getModule("widgets/Dialogs");
     
     // Function to run when the menu item is clicked
         
@@ -40,6 +41,22 @@ define(function (require, exports, module) {
         }
     }
     
+    
+    // Menus -> quickLib : display the "About Extension" modal
+    function aboutModal() {
+        var displayAbout = "<img style=\"float: left; margin:11px 5px 0px 0px; padding:0;\" src=\"styles/images/brackets_icon.svg\" alt=\"logo\" width=\"20\" height=\"20\">";
+        displayAbout += "<h3 style=\"margin-bottom:-5px;\">quickLib</h3></span>\n<small>version: 1.0.4</small><br><br>\n";
+        displayAbout += "<span style=\"letter-spacing: 1px;\">Quick & simple last-version snippet insert for all resources on ";
+        displayAbout += "<a href=\"https://developers.google.com/speed/libraries/\">Google Hosted Libraries</a>.<hr>";
+        displayAbout += "<p>&#1023; Author: Kopitar Anže</p><p>&#1023; GitHub: <a href=\"https://github.com/kopitar/brackets-quicklib\" >https://github.com/kopitar/brackets-quicklib</a></p>";
+        displayAbout += "&#1023; Contact: kopitar71@gmail.com<br><hr>";
+        // show modal dialog with "About Extension" information
+        Dialogs.showModalDialog('a', "About Extension", displayAbout);
+    }
+    
+    // About Extension menu item
+    var nav_ABOUT = "about.custom";
+    CommandManager.register("About Extension", nav_ABOUT, aboutModal);
 
     
     var COMMANDO_ID = "htmltemplates.seanDeee";   // package-style naming to avoid collisions
