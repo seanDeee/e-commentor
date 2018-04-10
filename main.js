@@ -53,7 +53,7 @@
             if (editor) {
 
 
-                var tmpt =
+                var cnncl =
                     "<html>" + "\n" +
                     "\n" +
                     "<head>" + "\n" +
@@ -65,13 +65,13 @@
                     "</html>" + "\n";
 
                 var insertionPos = editor.getCursorPos();
-                editor.document.replaceRange(tmpt, insertionPos);
+                editor.document.replaceRange(cnncl, insertionPos);
             }
         }
         
          // HTML Command Menu (Function htmlFunction())
         var COMMANDO_CANONICAL_ID = "htmltemplates.seanDeee"; // package-style naming to avoid collisions
-        CommandManager.register("Canonical Redirect", COMMANDO_CANONICAL_ID, htmlFunction);
+        CommandManager.register("Canonical Redirect", COMMANDO_CANONICAL_ID, canonical);
         
         // Menus -> quickLib : display the "About Extension" modal
         function aboutModal() {
