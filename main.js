@@ -100,20 +100,20 @@
 
         //Command key for the htmlFunction()
         //var menu = Menus.getMenu(Menus.AppMenuBar.CUSTOM_MENU);
-        menu.addMenuItem(COMMANDO_ID, [{
+        menu2.addMenuItem(COMMANDO_ID, [{
             "key": "ctrl-1"
         }, {
             "key": "ctrl-1"
         }]);
 
 
-        menu2.addMenuItem(COMMANDO_CANONICAL_ID, [{
+        menu.addMenuItem(COMMANDO_CANONICAL_ID, [{
             "key": "ctrl-2"
         }, {
             "key": "ctrl-2"
         }]);
 
 
-        menu.addMenuItem(nav_ABOUT);
-        menu2.addMenuItem(nav_CANONICAL);
+        menu2.addMenuItem(nav_ABOUT);
+        menu.addMenuItem(nav_CANONICAL);
     });
