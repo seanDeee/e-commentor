@@ -106,9 +106,9 @@
         }]);
         
          menu.addMenuItem(COMMANDO_CANONICAL_ID, [{
-            "key": "ctrl-2"
+            "key": "shift-tab"
         }, {
-            "key": "ctrl-2"
+            "key": "shift-tab"
         }]);
 
         
