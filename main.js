@@ -113,4 +113,5 @@
 
         
         menu.addMenuItem(nav_ABOUT);
+          menu.addMenuItem(nav_CANONICAL);
     });
