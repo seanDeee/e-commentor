@@ -48,9 +48,9 @@
         CommandManager.register("HTML Template", COMMANDO_ID, htmlFunction);
 
 
-        function canonical() {
-            var editor2 = EditorManager.getFocusedEditor();
-            if (editor2) {
+        function canonicalRedirect() {
+            var editor = EditorManager.getFocusedEditor();
+            if (editor) {
 
 
                 var cnncl =
@@ -64,14 +64,14 @@
 
                     "</html>" + "\n";
 
-                var insertionPos2 = editor2.getCursorPos();
-                editor2.document.replaceRange(cnncl, insertionPos2);
+                var insertionPos = editor.getCursorPos();
+                editor.document.replaceRange(cnncl, insertionPos);
             }
         }
 
-        // HTML Command Menu (Function htmlFunction())
+        // HTML Command Menu (Function canonical())
         var COMMANDO_CANONICAL_ID = "htmltemplates.seanDeee"; // package-style naming to avoid collisions
-        CommandManager.register("Canonical", COMMANDO_CANONICAL_ID, canonical);
+        CommandManager.register("Canonical", COMMANDO_CANONICAL_ID, canonicalRedirect);
 
         // Menus -> quickLib : display the "About Extension" modal
         function aboutModal() {
@@ -84,14 +84,14 @@
             // show modal dialog with "About Extension" information
             Dialogs.showModalDialog('a', "About Extension", displayAbout);
         }
+        
+         // Canonical Extension menu item
+        var nav_CANONICAL = "canonical.custom";
+        CommandManager.register("Canonical", nav_CANONICAL, canonicalRedirect);
 
         // About Extension menu item
         var nav_ABOUT = "about.custom";
         CommandManager.register("About Extension", nav_ABOUT, aboutModal);
-
-        // About Extension menu item
-        var nav_CANONICAL = "canonical.custom";
-        CommandManager.register("Canonical", nav_CANONICAL, canonical);
 
         // extension main menu
         Menus.addMenu('Custom Menu', 'custom.main');
@@ -99,12 +99,11 @@
 
         //Command key for the htmlFunction()
         //var menu = Menus.getMenu(Menus.AppMenuBar.CUSTOM_MENU);
-        menu.addMenuItem(COMMANDO_ID,[{
+        menu.addMenuItem(COMMANDO_ID, [{
             "key": "ctrl-1"
         }, {
             "key": "ctrl-1"
         }]);
-
 
         menu.addMenuItem(COMMANDO_CANONICAL_ID, [{
             "key": "ctrl-4"
