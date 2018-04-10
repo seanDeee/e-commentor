@@ -71,7 +71,7 @@
         
          // HTML Command Menu (Function htmlFunction())
         var COMMANDO_CANONICAL_ID = "htmltemplates.seanDeee"; // package-style naming to avoid collisions
-        CommandManager.register("Canonical Redirect", COMMANDO_CANONICAL_ID, canonical);
+        CommandManager.register("Canonical", COMMANDO_CANONICAL_ID, canonical);
         
         // Menus -> quickLib : display the "About Extension" modal
         function aboutModal() {
