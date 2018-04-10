@@ -43,17 +43,11 @@
             }
         }
 
+        // HTML Command Menu (Function htmlFunction())
         var COMMANDO_ID = "htmltemplates.seanDeee"; // package-style naming to avoid collisions
         CommandManager.register("HTML Template", COMMANDO_ID, htmlFunction);
 
-        //var menu = Menus.getMenu(Menus.AppMenuBar.CUSTOM_MENU);
-        menu.addMenuItem(COMMANDO_ID, [{
-            "key": "ctrl-1"
-        }, {
-            "key": "ctrl-1"
-        }]);
-
-
+        
         // Menus -> quickLib : display the "About Extension" modal
         function aboutModal() {
             var displayAbout = "<img style=\"float: left; margin:11px 5px 0px 0px; padding:0;\" src=\"styles/images/brackets_icon.svg\" alt=\"logo\" width=\"20\" height=\"20\">";
@@ -73,6 +67,15 @@
         // extension main menu
         Menus.addMenu('Custom Menu', 'custom.main');
         var menu = Menus.getMenu('custom.main');
+        
+        //Command key for the htmlFunction()
+        //var menu = Menus.getMenu(Menus.AppMenuBar.CUSTOM_MENU);
+        menu.addMenuItem(COMMANDO_ID, [{
+            "key": "ctrl-1"
+        }, {
+            "key": "ctrl-1"
+        }]);
 
+        
         menu.addMenuItem(nav_ABOUT);
     });
