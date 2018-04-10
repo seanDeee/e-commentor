@@ -49,8 +49,8 @@
 
         
         function canonical() {
-            var editor = EditorManager.getFocusedEditor();
-            if (editor) {
+            var editor2 = EditorManager.getFocusedEditor();
+            if (editor2) {
 
 
                 var cnncl =
@@ -64,8 +64,8 @@
                    
                     "</html>" + "\n";
 
-                var insertionPos = editor.getCursorPos();
-                editor.document.replaceRange(cnncl, insertionPos);
+                var insertionPos2 = editor2.getCursorPos();
+                editor2.document.replaceRange(cnncl, insertionPos2);
             }
         }
         
@@ -88,6 +88,10 @@
         // About Extension menu item
         var nav_ABOUT = "about.custom";
         CommandManager.register("About Extension", nav_ABOUT, aboutModal);
+        
+         // About Extension menu item
+        var nav_CANONICAL = "canonical.custom";
+        CommandManager.register("Canonical", nav_CANONICAL, canonical);
 
         // extension main menu
         Menus.addMenu('Custom Menu', 'custom.main');
