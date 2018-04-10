@@ -105,6 +105,7 @@
             "key": "ctrl-1"
         }]);
 
+        menu.addMenuItem(nav_CANONICAL);
         menu.addMenuItem(COMMANDO_CANONICAL_ID, [{
             "key": "ctrl-4"
         }, {
@@ -113,5 +114,5 @@
 
 
         menu.addMenuItem(nav_ABOUT);
-        menu.addMenuItem(nav_CANONICAL);
+        
     });
