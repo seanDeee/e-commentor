@@ -11,10 +11,10 @@
 
         // Function to run when the menu item is clicked
 
+        //html tmplt function in Custom Menu
         function htmlFunction() {
             var editor = EditorManager.getFocusedEditor();
             if (editor) {
-
 
                 var tmpt =
                     "<!DOCTYPE html>" + "\n" +
@@ -47,13 +47,13 @@
         var COMMANDO_ID = "htmltemplates.seanDeee"; // package-style naming to avoid collisions
         CommandManager.register("HTML Template", COMMANDO_ID, htmlFunction);
 
-
-        function canonicalRedirect() {
+        //canonical tmplt function in Custom Menu
+        function normalRedirect() {
             var editor = EditorManager.getFocusedEditor();
             if (editor) {
 
 
-                var cnncl =
+                var nrmal =
                     "<html>" + "\n" +
                     "\n" +
                     "<head>" + "\n" +
@@ -65,15 +65,67 @@
                     "</html>" + "\n";
 
                 var insertionPos = editor.getCursorPos();
+                editor.document.replaceRange(nrmal, insertionPos);
+            }
+        }
+
+        // HTML Command Menu (Function canonical())
+        var COMMANDO_NORMAL_ID = "normal.seanDeee"; // package-style naming to avoid collisions
+        CommandManager.register("Normal Redirect", COMMANDO_NORMAL_ID, normalRedirect);
+
+
+        //canonical tmplt function in Custom Menu
+        function canonicalRedirect() {
+            var editor = EditorManager.getFocusedEditor();
+            if (editor) {
+
+                var cnncl =
+                    "<html>" + "\n" +
+                    "\n" +
+                    "<head>" + "\n" +
+                    "\t" + "<meta name=\"ROBOTS\" content=\"NOINDEX,NOFOLLOW\"/>" + "\n" +
+                    "\t" + "<link rel=\"canonical\" href=\"FULL/ABSOLUTE PATH OF TARGET/NEW LINK\"/>" + "\n" +
+                    "\t" + "<meta http-equiv=\"refresh\" content=\"0; url=TARGET LINK HERE (relative)\">" + "\n" +
+
+                    "</head>" + "\n\n" +
+
+                    "</html>" + "\n";
+
+                var insertionPos = editor.getCursorPos();
                 editor.document.replaceRange(cnncl, insertionPos);
             }
         }
 
         // HTML Command Menu (Function canonical())
-        var COMMANDO_CANONICAL_ID = "htmltemplates.seanDeee"; // package-style naming to avoid collisions
-        CommandManager.register("Canonical", COMMANDO_CANONICAL_ID, canonicalRedirect);
+        var COMMANDO_CANONICAL_ID = "canonical.seanDeee"; // package-style naming to avoid collisions
+        CommandManager.register("Canonical Redirect", COMMANDO_CANONICAL_ID, canonicalRedirect);
 
-        // Menus -> quickLib : display the "About Extension" modal
+
+        //canonical tmplt function in Custom Menu
+        function vanityRedirect() {
+            var editor = EditorManager.getFocusedEditor();
+            if (editor) {
+
+                var vnty =
+                    "<html>" + "\n" +
+                    "\n" +
+                    "<head>" + "\n" +
+                    "\t" + "<meta http-equiv=\"refresh\" content=\"0; url=TARGET LINK HERE\">" + "\n" +
+                    "</head>" + "\n\n" +
+                    "</html>" + "\n";
+
+                var insertionPos = editor.getCursorPos();
+                editor.document.replaceRange(vnty, insertionPos);
+            }
+        }
+
+        // HTML Command Menu (Function canonical())
+        var COMMANDO_VANITY_ID = "vanity.seanDeee"; // package-style naming to avoid collisions
+        CommandManager.register("Vanity Redirect", COMMANDO_VANITY_ID, vanityRedirect);
+
+
+
+        //modal function in Custom Menu
         function aboutModal() {
             var displayAbout = "<img style=\"float: left; margin:11px 5px 0px 0px; padding:0;\" src=\"styles/images/brackets_icon.svg\" alt=\"logo\" width=\"30\" height=\"30\">";
             displayAbout += "<h3 style=\"margin-bottom:-5px;\">Custom Menu</h3></span>\n<small>version: 1.0.4</small><br><br>\n";
@@ -84,10 +136,18 @@
             // show modal dialog with "About Extension" information
             Dialogs.showModalDialog('a', "About Extension", displayAbout);
         }
-        
-         // Canonical Extension menu item
+
+        // Normal redirect Extension menu item
+        var nav_NORMAL = "normal.custom";
+        CommandManager.register("Canonical", nav_NORMAL, normalRedirect);
+
+        // Canonical redirect Extension menu item
         var nav_CANONICAL = "canonical.custom";
         CommandManager.register("Canonical", nav_CANONICAL, canonicalRedirect);
+
+        // Canonical redirect Extension menu item
+        var nav_VANITY = "vanity.custom";
+        CommandManager.register("Canonical", nav_VANITY, canonicalRedirect);
 
         // About Extension menu item
         var nav_ABOUT = "about.custom";
@@ -105,14 +165,30 @@
             "key": "ctrl-1"
         }]);
 
-        menu.addMenuItem(nav_CANONICAL);
+        //Command key for the canonical redirect()
+        menu.addMenuItem(COMMANDO_NORMAL_ID, [{
+            "key": "ctrl-2"
+        }, {
+            "key": "ctrl-2"
+        }]);
+
+        //Command key for the canonical redirect()
         menu.addMenuItem(COMMANDO_CANONICAL_ID, [{
+            "key": "ctrl-3"
+        }, {
+            "key": "ctrl-3"
+        }]);
+
+        //Command key for the canonical redirect()
+        menu.addMenuItem(COMMANDO_VANITY_ID, [{
             "key": "ctrl-4"
         }, {
             "key": "ctrl-4"
         }]);
 
 
+        //menu.addMenuItem(nav_CANONICAL);
+        menu.addMenuDivider();
         menu.addMenuItem(nav_ABOUT);
-        
+
     });
