@@ -102,7 +102,7 @@
         menu.addMenuItem(COMMANDO_ID, [{
             "key": "ctrl-1"
         }, {
-            "key": "ctrl-1"
+            "key": "ctrl-4"
         }]);
 
 
