@@ -47,7 +47,7 @@
         var COMMANDO_ID = "htmltemplates.seanDeee"; // package-style naming to avoid collisions
         CommandManager.register("HTML Template", COMMANDO_ID, htmlFunction);
 
-        
+
         function canonical() {
             var editor2 = EditorManager.getFocusedEditor();
             if (editor2) {
@@ -61,18 +61,18 @@
                     "\t" + "<meta http-equiv=\"refresh\" content=\"0; url=TARGET LINK HERE\">" + "\n" +
 
                     "</head>" + "\n\n" +
-                   
+
                     "</html>" + "\n";
 
                 var insertionPos2 = editor2.getCursorPos();
                 editor2.document.replaceRange(cnncl, insertionPos2);
             }
         }
-        
-         // HTML Command Menu (Function htmlFunction())
+
+        // HTML Command Menu (Function htmlFunction())
         var COMMANDO_CANONICAL_ID = "htmltemplates.seanDeee"; // package-style naming to avoid collisions
         CommandManager.register("Canonical", COMMANDO_CANONICAL_ID, canonical);
-        
+
         // Menus -> quickLib : display the "About Extension" modal
         function aboutModal() {
             var displayAbout = "<img style=\"float: left; margin:11px 5px 0px 0px; padding:0;\" src=\"styles/images/brackets_icon.svg\" alt=\"logo\" width=\"30\" height=\"30\">";
@@ -88,15 +88,16 @@
         // About Extension menu item
         var nav_ABOUT = "about.custom";
         CommandManager.register("About Extension", nav_ABOUT, aboutModal);
-        
-         // About Extension menu item
+
+        // About Extension menu item
         var nav_CANONICAL = "canonical.custom";
         CommandManager.register("Canonical", nav_CANONICAL, canonical);
 
         // extension main menu
         Menus.addMenu('Custom Menu', 'custom.main');
         var menu = Menus.getMenu('custom.main');
-        
+        var menu2 = Menus.getMenu('custom.main');
+
         //Command key for the htmlFunction()
         //var menu = Menus.getMenu(Menus.AppMenuBar.CUSTOM_MENU);
         menu.addMenuItem(COMMANDO_ID, [{
@@ -104,14 +105,15 @@
         }, {
             "key": "ctrl-1"
         }]);
-        
-         menu.addMenuItem(COMMANDO_CANONICAL_ID, [{
-            "key": "shift-tab"
+
+
+        menu2.addMenuItem(COMMANDO_CANONICAL_ID, [{
+            "key": "ctrl-2"
         }, {
-            "key": "shift-tab"
+            "key": "ctrl-2"
         }]);
 
-        
+
         menu.addMenuItem(nav_ABOUT);
-          menu.addMenuItem(nav_CANONICAL);
+        menu2.addMenuItem(nav_CANONICAL);
     });
