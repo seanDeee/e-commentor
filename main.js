@@ -1,9 +1,12 @@
 define(function (require, exports, module) {
     "use strict";
 
-    var CommandManager = brackets.getModule("command/CommandManager"),
-        EditorManager  = brackets.getModule("editor/EditorManager"),
-        Menus          = brackets.getModule("command/Menus"),
+    var Commands = brackets.getModule("command/Commands"),
+        CommandManager = brackets.getModule("command/CommandManager"),
+        Menus = brackets.getModule("command/Menus"),
+        EditorManager = brackets.getModule("editor/EditorManager"),
+        ExtensionUtils = brackets.getModule("utils/ExtensionUtils"),
+        FileUtils = brackets.getModule("file/FileUtils"),
         Dialogs = brackets.getModule("widgets/Dialogs");
     
     // Function to run when the menu item is clicked
@@ -69,5 +72,5 @@ define(function (require, exports, module) {
     var menu = Menus.getMenu(Menus.AppMenuBar.FILE_MENU);
     menu.addMenuItem(COMMANDO_ID, [{ "key": "ctrl-1" }, { "key": "ctrl-1"}]);
     
-    
+    menu.addMenuItem(nav_ABOUT);
 });                           
