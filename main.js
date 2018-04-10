@@ -57,9 +57,7 @@ define(function (require, exports, module) {
         Dialogs.showModalDialog('a', "About Extension", displayAbout);
     }
     
-    // About Extension menu item
-    var nav_ABOUT = "about.custom";
-    CommandManager.register("About Extension", nav_ABOUT, aboutModal);
+  
 
     
     var COMMANDO_ID = "htmltemplates.seanDeee";   // package-style naming to avoid collisions
@@ -69,8 +67,12 @@ define(function (require, exports, module) {
     Menus.addMenu('Custom', 'custom.main');
     var menu = Menus.getMenu('custom.main');
     
-    var menu = Menus.getMenu(Menus.AppMenuBar.FILE_MENU);
+    var menu = Menus.getMenu(Menus.AppMenuBar.CUSTOM_MENU);
     menu.addMenuItem(COMMANDO_ID, [{ "key": "ctrl-1" }, { "key": "ctrl-1"}]);
     
+    
+      // About Extension menu item
+    var nav_ABOUT = "about.custom";
+    CommandManager.register("About Extension", nav_ABOUT, aboutModal);
     menu.addMenuItem(nav_ABOUT);
 });                           
