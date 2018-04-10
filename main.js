@@ -66,7 +66,7 @@ define(function (require, exports, module) {
     Menus.addMenu('Custom', 'custom.main');
     var menu = Menus.getMenu('custom.main');
     
-    var menu = Menus.getMenu(Menus.AppMenuBar.CUSTOM_MENU);
+    var menu = Menus.getMenu(Menus.AppMenuBar.FILE_MENU);
     menu.addMenuItem(COMMANDO_ID, [{ "key": "ctrl-1" }, { "key": "ctrl-1"}]);
     
     
