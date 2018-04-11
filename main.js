@@ -136,7 +136,12 @@
             // show modal dialog with "About Extension" information
             Dialogs.showModalDialog('a', "About Extension", displayAbout);
         }
+        
+        // extension main menu
+        Menus.addMenu('Custom Menu', 'custom.main');
+        var menu = Menus.getMenu('custom.main');
 
+        menu.addMenuDivider();
         // Normal redirect Extension menu item
         var nav_NORMAL = "normal.custom";
         CommandManager.register("Canonical", nav_NORMAL, normalRedirect);
@@ -152,10 +157,6 @@
         // About Extension menu item
         var nav_ABOUT = "about.custom";
         CommandManager.register("About Extension", nav_ABOUT, aboutModal);
-
-        // extension main menu
-        Menus.addMenu('Custom Menu', 'custom.main');
-        var menu = Menus.getMenu('custom.main');
 
         //Command key for the htmlFunction()
         //var menu = Menus.getMenu(Menus.AppMenuBar.CUSTOM_MENU);
