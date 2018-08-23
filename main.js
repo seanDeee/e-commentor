@@ -44,84 +44,105 @@
         }
 
         // HTML Command Menu (Function htmlFunction())
-        var COMMANDO_ID = "htmltemplates.seanDeee"; // package-style naming to avoid collisions
+        var COMMANDO_ID = "commentor.seanDeee"; // package-style naming to avoid collisions
         CommandManager.register("HTML Template", COMMANDO_ID, htmlFunction);
 
-        //canonical tmplt function in Custom Menu
-        function normalRedirect() {
+        //Single Line Comment 2 tmplt function in Custom Menu
+        function comment1() {
             var editor = EditorManager.getFocusedEditor();
             if (editor) {
 
 
-                var nrmal =
-                    "<html>" + "\n" +
-                    "\n" +
-                    "<head>" + "\n" +
-                    "\t" + "<meta name=\"robots\" content=\"noindex\">" + "\n" +
-                    "\t" + "<meta http-equiv=\"refresh\" content=\"0; url=TARGET LINK HERE\">" + "\n" +
-
-                    "</head>" + "\n\n" +
-
-                    "</html>" + "\n";
+                var cmt1 =
+                    "//This is a Single Line Comment";
 
                 var insertionPos = editor.getCursorPos();
-                editor.document.replaceRange(nrmal, insertionPos);
+                editor.document.replaceRange(cmt1, insertionPos);
             }
         }
 
         // HTML Command Menu (Function canonical())
-        var COMMANDO_NORMAL_ID = "normal.seanDeee"; // package-style naming to avoid collisions
-        CommandManager.register("Normal Redirect", COMMANDO_NORMAL_ID, normalRedirect);
+        var COMMANDO_COMMENT1_ID = "comment1.seanDeee"; // package-style naming to avoid collisions
+        CommandManager.register("Single Line Comment 1 (//) ", COMMANDO_COMMENT1_ID, comment1);
 
 
-        //canonical tmplt function in Custom Menu
-        function canonicalRedirect() {
+        //Single Line comment 2 tmplt function in Custom Menu
+        function comment2() {
             var editor = EditorManager.getFocusedEditor();
             if (editor) {
 
-                var cnncl =
-                    "<html>" + "\n" +
-                    "\n" +
-                    "<head>" + "\n" +
-                    "\t" + "<meta name=\"ROBOTS\" content=\"NOINDEX,NOFOLLOW\"/>" + "\n" +
-                    "\t" + "<link rel=\"canonical\" href=\"FULL/ABSOLUTE PATH OF TARGET/NEW LINK\"/>" + "\n" +
-                    "\t" + "<meta http-equiv=\"refresh\" content=\"0; url=TARGET LINK HERE (relative)\">" + "\n" +
-
-                    "</head>" + "\n\n" +
-
-                    "</html>" + "\n";
+                var cmt2 =
+                    "# This is also a Single-Line comment";
 
                 var insertionPos = editor.getCursorPos();
-                editor.document.replaceRange(cnncl, insertionPos);
+                editor.document.replaceRange(cmt2, insertionPos);
             }
         }
 
         // HTML Command Menu (Function canonical())
-        var COMMANDO_CANONICAL_ID = "canonical.seanDeee"; // package-style naming to avoid collisions
-        CommandManager.register("Canonical Redirect", COMMANDO_CANONICAL_ID, canonicalRedirect);
+        var COMMANDO_COMMENT2_ID = "comment2.seanDeee"; // package-style naming to avoid collisions
+        CommandManager.register("Single Line Comment 2 (#) ", COMMANDO_COMMENT2_ID, comment2);
 
 
-        //canonical tmplt function in Custom Menu
-        function vanityRedirect() {
+        //Multi Line comment  function in Custom Menu
+        function comment3() {
             var editor = EditorManager.getFocusedEditor();
             if (editor) {
 
-                var vnty =
-                    "<html>" + "\n" +
-                    "\n" +
-                    "<head>" + "\n" +
-                    "\t" + "<meta http-equiv=\"refresh\" content=\"0; url=TARGET LINK HERE\">" + "\n" +
-                    "</head>" + "\n\n" +
-                    "</html>" + "\n";
+                var cmt3 =
+                    "/* \n" +
+                    "This is a Multi Line Comment \n" +
+                    "*/";
 
                 var insertionPos = editor.getCursorPos();
-                editor.document.replaceRange(vnty, insertionPos);
+                editor.document.replaceRange(cmt3, insertionPos);
             }
         }
 
         // HTML Command Menu (Function canonical())
-        var COMMANDO_VANITY_ID = "vanity.seanDeee"; // package-style naming to avoid collisions
-        CommandManager.register("Vanity Redirect", COMMANDO_VANITY_ID, vanityRedirect);
+        var COMMANDO_COMMENT3_ID = "comment3.seanDeee"; // package-style naming to avoid collisions
+        CommandManager.register("Multi Line Comment (/* */)", COMMANDO_COMMENT3_ID, comment3);
+
+
+
+        //Section comment  tmplt function in Custom Menu
+        function comment4() {
+            var editor = EditorManager.getFocusedEditor();
+            if (editor) {
+
+                var cmt4 =
+                    "/* \n" +
+                    "========================================== \n" +
+                    "This is a Section Comment \n" +
+                    "========================================== \n" +
+                    "*/";
+
+                var insertionPos = editor.getCursorPos();
+                editor.document.replaceRange(cmt4, insertionPos);
+            }
+        }
+
+        // HTML Command Menu (Function canonical())
+        var COMMANDO_COMMENT4_ID = "comment4.seanDeee"; // package-style naming to avoid collisions
+        CommandManager.register("Section Comment", COMMANDO_COMMENT4_ID, comment4);
+
+
+        //canonical tmplt function in Custom Menu
+        function comment5() {
+            var editor = EditorManager.getFocusedEditor();
+            if (editor) {
+
+                var cmt5 =
+                    "<!-- This is a Comment -->";
+
+                var insertionPos = editor.getCursorPos();
+                editor.document.replaceRange(cmt5, insertionPos);
+            }
+        }
+
+        // HTML Command Menu (Function canonical())
+        var COMMANDO_COMMENT5_ID = "comment5.seanDeee"; // package-style naming to avoid collisions
+        CommandManager.register("HTML Comment", COMMANDO_COMMENT5_ID, comment5);
 
 
 
@@ -129,30 +150,37 @@
         function aboutModal() {
             var displayAbout = "<img style=\"float: left; margin:11px 5px 0px 0px; padding:0;\" src=\"styles/images/brackets_icon.svg\" alt=\"logo\" width=\"30\" height=\"30\">";
             displayAbout += "<h3 style=\"margin-bottom:-5px;\">Custom Menu</h3></span>\n<small>version: 1.0.4</small><br><br>\n";
-            displayAbout += "<span style=\"letter-spacing: 1px;\">Quick & simple last-version snippet insert for all resources on ";
-            displayAbout += "<a href=\"https://developers.google.com/speed/libraries/\">Google Hosted Libraries</a>.<hr>";
-            displayAbout += "<p>&#1023; Author: SeanDee Dela Torre</p> <p>&#1023; Github Profile: <a href=\"https://github.com/seanDeee/\" >seanDeee</a></p><p>&#1023; GitHub Repository: <a href=\"https://github.com/seanDeee/brackets-custom-extension\" >https://github.com/seanDeee/brackets-custom-extension</a></p>";
+            displayAbout += "<p>&#1023; Author: SeanDee Dela Torre</p> <p>&#1023; Github Profile: <a href=\"https://github.com/seanDeee/\" >seanDeee</a></p><p>&#1023; GitHub Repository: <a href=\"https://github.com/seanDeee/e-commentor\" >https://github.com/seanDeee/e-commentor</a></p>";
             displayAbout += "&#1023; Contact: sjdt17@gmail.com<br><hr>";
+            displayAbout += "<p> Give a Star if you like it Thank You!!. :) ";
             // show modal dialog with "About Extension" information
             Dialogs.showModalDialog('a', "About Extension", displayAbout);
         }
-        
+
         // extension main menu
         Menus.addMenu('Custom Menu', 'custom.main');
         var menu = Menus.getMenu('custom.main');
 
-        menu.addMenuDivider();
-        // Normal redirect Extension menu item
-        var nav_NORMAL = "normal.custom";
-        CommandManager.register("Canonical", nav_NORMAL, normalRedirect);
 
-        // Canonical redirect Extension menu item
-        var nav_CANONICAL = "canonical.custom";
-        CommandManager.register("Canonical", nav_CANONICAL, canonicalRedirect);
+        // Comment 1 Extension menu item
+        var nav_CMT1 = "comment1.custom";
+        CommandManager.register("Canonical", nav_CMT1, comment1);
 
-        // Canonical redirect Extension menu item
-        var nav_VANITY = "vanity.custom";
-        CommandManager.register("Canonical", nav_VANITY, canonicalRedirect);
+        // Comment 2 Extension menu item
+        var nav_CMT2 = "comment2.custom";
+        CommandManager.register("Canonical", nav_CMT2, comment2);
+
+        // Comment 3 Extension menu item
+        var nav_CMT3 = "comment3.custom";
+        CommandManager.register("Canonical", nav_CMT3, comment3);
+
+        // Comment 4 Extension menu item
+        var nav_CMT4 = "comment4.custom";
+        CommandManager.register("Canonical", nav_CMT4, comment4);
+
+        // Comment 5  Extension menu item
+        var nav_CMT5 = "comment5.custom";
+        CommandManager.register("Canonical", nav_CMT5, comment5);
 
         // About Extension menu item
         var nav_ABOUT = "about.custom";
@@ -166,29 +194,46 @@
             "key": "ctrl-1"
         }]);
 
-        //Command key for the canonical redirect()
-        menu.addMenuItem(COMMANDO_NORMAL_ID, [{
+        //divider
+        menu.addMenuDivider();
+
+        //Command key for the Comment 1 ()
+        menu.addMenuItem(COMMANDO_COMMENT1_ID, [{
             "key": "ctrl-2"
         }, {
             "key": "ctrl-2"
         }]);
 
-        //Command key for the canonical redirect()
-        menu.addMenuItem(COMMANDO_CANONICAL_ID, [{
+        //Command key for the Comment 2 ()
+        menu.addMenuItem(COMMANDO_COMMENT2_ID, [{
             "key": "ctrl-3"
         }, {
             "key": "ctrl-3"
         }]);
 
-        //Command key for the canonical redirect()
-        menu.addMenuItem(COMMANDO_VANITY_ID, [{
+        //Command key for the Comment 3 ()
+        menu.addMenuItem(COMMANDO_COMMENT3_ID, [{
             "key": "ctrl-4"
         }, {
             "key": "ctrl-4"
         }]);
 
+        //Command key for the Comment 4 ()
+        menu.addMenuItem(COMMANDO_COMMENT4_ID, [{
+            "key": "ctrl-5"
+        }, {
+            "key": "ctrl-5"
+        }]);
 
-        //menu.addMenuItem(nav_CANONICAL);
+        //Command key for the Comment 5 ()
+        menu.addMenuItem(COMMANDO_COMMENT5_ID, [{
+            "key": "ctrl-6"
+        }, {
+            "key": "ctrl-6"
+        }]);
+
+
+        //menu.addMenuItem(CMT2);
         menu.addMenuDivider();
         menu.addMenuItem(nav_ABOUT);
 
