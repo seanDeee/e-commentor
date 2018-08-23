@@ -158,7 +158,7 @@
         }
 
         // extension main menu
-        Menus.addMenu('Custom Menu', 'custom.main');
+        Menus.addMenu('E-Comment', 'custom.main');
         var menu = Menus.getMenu('custom.main');
 
 
