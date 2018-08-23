@@ -61,9 +61,9 @@
             }
         }
 
-        // HTML Command Menu (Function canonical())
+        // HTML Command Menu (Function comment1())
         var COMMANDO_COMMENT1_ID = "comment1.seanDeee"; // package-style naming to avoid collisions
-        CommandManager.register("Single Line Comment 1 (//) ", COMMANDO_COMMENT1_ID, comment1);
+        CommandManager.register("Single Line Comment 1 // ", COMMANDO_COMMENT1_ID, comment1);
 
 
         //Single Line comment 2 tmplt function in Custom Menu
@@ -79,9 +79,9 @@
             }
         }
 
-        // HTML Command Menu (Function canonical())
+        // HTML Command Menu (Function comment2())
         var COMMANDO_COMMENT2_ID = "comment2.seanDeee"; // package-style naming to avoid collisions
-        CommandManager.register("Single Line Comment 2 (#) ", COMMANDO_COMMENT2_ID, comment2);
+        CommandManager.register("Single Line Comment 2 # ", COMMANDO_COMMENT2_ID, comment2);
 
 
         //Multi Line comment  function in Custom Menu
@@ -99,9 +99,9 @@
             }
         }
 
-        // HTML Command Menu (Function canonical())
+        // HTML Command Menu (Function comment3())
         var COMMANDO_COMMENT3_ID = "comment3.seanDeee"; // package-style naming to avoid collisions
-        CommandManager.register("Multi Line Comment (/* */)", COMMANDO_COMMENT3_ID, comment3);
+        CommandManager.register("Multi Line Comment /**/", COMMANDO_COMMENT3_ID, comment3);
 
 
 
@@ -122,7 +122,7 @@
             }
         }
 
-        // HTML Command Menu (Function canonical())
+        // HTML Command Menu (Function comment4())
         var COMMANDO_COMMENT4_ID = "comment4.seanDeee"; // package-style naming to avoid collisions
         CommandManager.register("Section Comment", COMMANDO_COMMENT4_ID, comment4);
 
@@ -140,9 +140,9 @@
             }
         }
 
-        // HTML Command Menu (Function canonical())
+        // HTML Command Menu (Function comment5())
         var COMMANDO_COMMENT5_ID = "comment5.seanDeee"; // package-style naming to avoid collisions
-        CommandManager.register("HTML Comment", COMMANDO_COMMENT5_ID, comment5);
+        CommandManager.register("HTML Comment <!----> ", COMMANDO_COMMENT5_ID, comment5);
 
 
 
@@ -158,7 +158,7 @@
         }
 
         // extension main menu
-        Menus.addMenu('Custom Menu', 'custom.main');
+        Menus.addMenu('E-Comment', 'custom.main');
         var menu = Menus.getMenu('custom.main');
 
 
