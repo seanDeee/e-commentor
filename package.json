@@ -1,9 +1,9 @@
 {
     "name": "seandeee.commentor",
-    "title": "E-Commentor",
-    "description": "Your new comment insertion for your codes",
+    "title": "Comment Generator",
+    "description": "Comment Generator Saves .2 seconds of your coding :p",
     "homepage": "https://github.com/seanDeee/e-commentor",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": "Sean Dee",
     "keywords": [
 		"custom",
